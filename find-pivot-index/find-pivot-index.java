@@ -29,17 +29,12 @@ class Solution {
             leftSum += nums[j];
             rightSum -= nums[j+1];
             
+            //this condition is for when we reach length, to avoid out of bounds 
             if(leftSum == rightSum){
                 return j+1;
             }
         }
         
-        leftSum += nums[nums.length-1];
-        rightSum -= nums[nums.length-1];
-        if(leftSum == rightSum ){
-            return nums.length-1;
-        }
-
          return -1;
     }
 }
