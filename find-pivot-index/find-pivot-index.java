@@ -1,11 +1,5 @@
 class Solution {
     public int pivotIndex(int[] nums) {
-        //add all numbers in list
-        //have a marker that moves right
-        //while marker < total, move right, decrement from total
-        //if marker = total return postion
-        //if marker > total break return -1
-        //if total = 0 return 0
         int rightSum = 0;
         //finds sum of list, also a placeholder for right side pivot
         for(int i: nums){
@@ -13,11 +7,15 @@ class Solution {
         }
         
         //start conditions
+        //we always start on [0]
         int leftSum = nums[0];
+        //[0] is removed from righ pivot sum
         rightSum -= nums[0];
+        //check condition for position[0] and rightpivot sum ==0
         if(rightSum == 0){
             return 0;
         }
+        //if the check passes we can move the pivot marker to position [1]
         rightSum -= nums[1];
         //j start at position 1 because left always start with [0]
         for(int j = 1; j< nums.length-1; j++){
